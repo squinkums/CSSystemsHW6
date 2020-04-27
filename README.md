@@ -13,3 +13,6 @@ The throughput, as expected, keeps increasing until the number of threads reache
 ![Histogram of 100 measures](https://github.com/squinkums/CSSystemsHW6/blob/master//throughput.png?raw=true)
 
 
+## Multi-threaded server
+
+Unfortunately, we have been having issues with making our server multi-threaded. Currently our server creates a handler which creates a new cache and then listens for requests to modify it. Because of this, making any new handlers would mean multiple caches, which is not our goal for this part of the assignment. We've included a version of the code where the handler now uses a cache made within the server function, but we're having an issue with making multiple handlers. 
